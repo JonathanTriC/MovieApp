@@ -1,8 +1,6 @@
 package com.example.movieapp
 
 import android.util.Log
-import com.example.movieapp.model.GetMoviesResponse
-import com.example.movieapp.model.Movie
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,9 +21,9 @@ object MoviesRepository {
     }
 
     fun getPopularMovies(
-            page: Int = 1,
-            onSuccess: (movies: List<Movie>) -> Unit,
-            onError: () -> Unit
+        page: Int = 1,
+        onSuccess: (movies: List<Movie>) -> Unit,
+        onError: () -> Unit
     ) {
         api.getPopularMovies(page = page)
             .enqueue(object : Callback<GetMoviesResponse>{
